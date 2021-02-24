@@ -1,0 +1,48 @@
+@import '../../partials/resets';
+@import '../../partials/variables';
+@import '../../partials/mixins.scss';
+
+.header {
+  &__nav {
+    @include flex-center;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    margin: 1.5rem;
+  }  
+
+  &__search {
+    width: 90vw;
+    position: relative;
+  }
+
+  &__search-bar {
+    width: 90vw;
+    padding: 1rem 0
+  }
+
+  &__image {
+    position: absolute;
+    right: 90%;
+    top: 35%;
+  }
+
+  &__button {
+    @include button;
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+
+  &__avatar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 5rem;
+    object-fit: cover;
+    object-position: left;
+  }
+
+}
+

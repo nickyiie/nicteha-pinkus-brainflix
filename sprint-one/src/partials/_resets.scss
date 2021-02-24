@@ -1,5 +1,5 @@
-@use './typography' as *;
-@use './partial' as *;
+@import './typography';
+@import './variables';
 
 html {
   box-sizing: border-box;

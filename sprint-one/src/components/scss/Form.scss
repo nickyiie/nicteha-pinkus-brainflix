@@ -1,0 +1,113 @@
+@import '../../partials/resets';
+@import '../../partials/variables';
+@import '../../partials/mixins.scss';
+
+.comments {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: .5rem 1rem 0 1rem;
+  &__counter {
+    color: $color-text;
+    font-family: 'AvenirNext LT Pro Demi';
+    font-size: .875rem;
+    margin-bottom:2rem;
+
+  }
+
+  &__interactive {
+    @include flex-center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $color-divider;
+
+    @include between-mobile-tablet {
+      padding: 0 0 2rem 3rem;
+    }
+    @include tablet {
+      margin: 0 6.25rem 2rem 6.25rem;
+    }
+
+    @include desktop {
+      margin: 0 17.875rem 0 17.875rem;
+      padding: 0 0 2rem 0;
+      justify-content: flex-end;
+    }
+  }
+
+  &__form {
+    @include flex-column;
+    width: 80%;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include desktop {
+      width: 69%;
+    }
+  }
+
+  &__image {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 5rem;
+    object-fit: cover;
+    object-position: left;
+    align-self: flex-start;
+    margin-right: .5rem;
+
+    @include tablet {
+      margin-right: 1rem;
+    }
+  }
+
+  &__label {
+    color: $color-light-text;
+    font-family: 'AvenirNext LT Pro Demi';
+    font-size: .875rem;
+    text-align:left;
+    
+  }
+
+  &__textbox {
+    width: 100%;
+    height: 6rem;
+    border-radius: 4px;
+    border: 3px solid $color-primary;
+
+    &:focus {
+      border: 1px solid black;
+    }
+  }
+
+  &__button {
+    @include button;
+    width: 100%;
+    margin: .75rem 0 0 0;
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+
+    @include between-mobile-tablet {
+      align-self: flex-end;
+      width: 43%;
+    }
+
+    @include tablet { 
+      width: 40%;
+      margin-top: 1.5rem;
+    }
+
+    @include between-tablet-desktop {
+      width: 30%;
+    }
+
+    @include desktop {
+      width: 38%;
+    }
+  }
+
+
+
+}

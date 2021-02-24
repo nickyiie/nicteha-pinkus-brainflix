@@ -1,0 +1,48 @@
+@import '../../partials/resets';
+@import '../../partials/mixins';
+@import '../../partials/variables';
+
+.intro {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  color: $color-text; 
+  margin: 2rem 1rem;
+
+  &__title {
+    font-family: 'AvenirNext LT Pro Bold';
+    margin-bottom:1rem;
+    text-align:left;
+  }
+
+  &__author {
+    font-family: 'AvenirNext LT Pro Demi';
+    font-size: 0.875rem;
+    margin-right: .5rem;
+  }
+
+  &__date {
+    color: $color-light-text;
+  }
+
+  &__counter {
+    display: flex;
+    margin: 2rem 1rem 1.5rem 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $color-divider;
+    
+    &-image {
+      margin-right:.5rem;
+    }
+  
+    &-count {
+      margin-right: 1rem;
+    }
+  }
+
+  &__blurb {
+    text-align: left;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+  }
+}

@@ -1,0 +1,54 @@
+@use './variables' as *;
+
+@mixin between-mobile-tablet {
+  @media (min-width: $breakpointbetween-mobile-tablet) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpointtablet) {
+    @content;
+  }
+}
+
+@mixin between-tablet-desktop {
+  @media (min-width: $breakpointbetween-tablet-desktop) {
+    @content;
+  }
+}
+
+@mixin gallery {
+  @media (min-width: $breakpointgallery) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media  (min-width: $breakpointdesktop) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@mixin button {
+  font-family: 'AvenirNext LT Pro Demi';
+  font-size: 0.875rem;
+  color: $color-white;
+  background-color: $color-primary;
+  padding: 1rem 4.85rem;
+  border-radius: .5rem;
+  margin: .5rem 1rem 0 0;
+}
+
