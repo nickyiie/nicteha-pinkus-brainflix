@@ -9,8 +9,8 @@ function Header () {
       <nav className='header__nav'>
         <img className='header__logo' src={Logo} alt='logo'/>
         <div className='header__search'>
+          <img className='header__image' src={Lens} alt='magnifying glass'/>  
           <input className='header__search-bar' type='text' name='searchBar' placeholder='Search'></input>
-          <img className='header__image' src={Lens} alt='magnifying glass'/>
         </div>
         <p className='header__button'>+ UPLOAD</p>
         <img className='header__avatar' src={Avatar} alt='avatar'/> 

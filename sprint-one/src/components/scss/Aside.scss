@@ -1,0 +1,35 @@
+@import '../../partials/resets';
+@import '../../partials/mixins';
+@import '../../partials/variables';
+
+.aside {
+  @include flex-column;
+  align-items:flex-start;
+  margin: 2.5rem 1rem 0 1rem;
+  
+  &__title {
+    color: $color-light-text;
+    font-size: .875rem;
+  }
+  
+  &__video-box {
+    display: flex;
+  }
+
+  &__blurb {
+   margin-left: 1rem;
+  }
+
+  &__header {
+    font-family: 'AvenirNext LT Pro Bold';
+    text-align: left;
+    font-size: .875rem;
+    line-height: 1.375rem;
+  }
+
+  &__channel {
+    text-align:left;
+    margin-top: 1rem;
+    font-size: .8125rem;
+  }
+}

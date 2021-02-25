@@ -6,23 +6,35 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  color: $color-text; 
   margin: 2rem 1rem;
 
   &__title {
     font-family: 'AvenirNext LT Pro Bold';
     margin-bottom:1rem;
     text-align:left;
+
+    @include tablet {
+      margin-right: 5rem;
+      font-size: 2.25rem;
+    }
   }
 
   &__author {
     font-family: 'AvenirNext LT Pro Demi';
     font-size: 0.875rem;
     margin-right: .5rem;
+
+    @include tablet {
+      width: 6rem;
+    }
   }
 
   &__date {
     color: $color-light-text;
+
+    @include tablet {
+      width: 6rem;
+    }
   }
 
   &__counter {
@@ -31,6 +43,10 @@
     padding-bottom: 1.5rem;
     border-bottom: 1px solid $color-divider;
     
+    @include tablet {
+      width: 10rem;
+    }
+
     &-image {
       margin-right:.5rem;
     }

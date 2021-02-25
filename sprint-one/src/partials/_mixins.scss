@@ -39,7 +39,6 @@
 @mixin flex-column {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 @mixin button {
@@ -48,7 +47,11 @@
   color: $color-white;
   background-color: $color-primary;
   padding: 1rem 4.85rem;
-  border-radius: .5rem;
+  border-radius: .25rem;
   margin: .5rem 1rem 0 0;
+
+    &:hover {
+      background-color: $color-secondary;
+  }
 }
 

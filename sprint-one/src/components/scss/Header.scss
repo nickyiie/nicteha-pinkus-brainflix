@@ -6,33 +6,59 @@
   &__nav {
     @include flex-center;
     flex-wrap: wrap;
+
+    @include tablet {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      height: 6rem;
+    }
   }
 
   &__logo {
     margin: 1.5rem;
+
+    @include tablet {
+      margin: 1.5rem 10.5625rem 1.5rem 1.5rem;
+    }
   }  
 
   &__search {
     width: 90vw;
-    position: relative;
+    border: 1px solid $color-light-text;
+    border-radius: .25rem;
+    display: flex;
+    background-color: $color-light-background;
+
+    @include tablet {
+      width: 27%;
+    }
   }
 
   &__search-bar {
-    width: 90vw;
-    padding: 1rem 0
+    padding: 1rem 0;
+    border: none;
+    background-color: $color-light-background;
+    width: 25%;
+
+    &:focus {
+      border: none;
+    }
+
+    @include tablet {
+      width: 10rem;
+    }
   }
 
   &__image {
-    position: absolute;
-    right: 90%;
-    top: 35%;
+    margin: 0 .5rem;
   }
 
   &__button {
     @include button;
 
-    &:hover {
-      background-color: $color-secondary;
+    @include tablet {
+      padding: 1rem 2rem;
+      margin-left: 1.5rem;
     }
   }
 
