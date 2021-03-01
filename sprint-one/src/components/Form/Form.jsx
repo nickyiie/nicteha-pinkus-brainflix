@@ -12,7 +12,7 @@ function Form () {
             <label className='form__label'>JOIN THE CONVERSATION</label>
             <textarea className='form__textbox' type='type' name='comment' placeholder='That was easily the most spectacular BMX moment ever.'></textarea>
           </div>
-          <button className='form__button'>COMMENT</button>
+          <p className='form__button'>COMMENT</p>
         </form>  
       </div>
     </div>

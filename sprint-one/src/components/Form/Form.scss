@@ -10,7 +10,8 @@
 
   @include tablet {
     width: 100%;
-    justify-content: space-around;
+    margin: .5rem 1.5rem 0 1.5rem;
+    
   }
 
   &__counter {
@@ -19,24 +20,21 @@
     font-size: .875rem;
     margin-bottom:2rem;
 
+    @include tablet {
+      font-size: 1rem;
+    }
+
   }
 
   &__interactive {
     @include flex-center;
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid $color-divider;
+    width: 100%;
 
-    @include between-mobile-tablet {
-      padding: 0 0 2rem 3rem;
-    }
     @include tablet {
-      margin: 0 6.25rem 2rem 6.25rem;
-    }
-
-    @include desktop {
-      margin: 0 17.875rem 0 17.875rem;
-      padding: 0 0 2rem 0;
-      justify-content: flex-end;
+      width: 94%;
+      justify-content: space-between;
     }
   }
 
@@ -71,6 +69,11 @@
   &__heading {
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      width: 57vw;
+      margin-right: 1rem;
+    }
   }
 
   &__label {
@@ -78,6 +81,10 @@
     font-family: 'AvenirNext LT Pro Demi';
     font-size: .875rem;
     text-align:left;
+
+    @include tablet {
+      font-size: 1rem;
+    }
   }
 
   &__textbox {
@@ -88,24 +95,29 @@
     padding: 1em;
 
     &::placeholder {
+      font-family: 'AvenirNext LT Pro';
+      font-size: .875rem;
       color: $color-text;
       opacity: 1;
     }
 
     @include tablet {
-      height: 3rem;
-      // flex-grow: ;
+      height: 3.5rem;
+      
     }
   }
 
   &__button {
     @include button;
-    width: 100%;
     margin: .75rem 0 0 0;
-    text-align: center;
+    
 
     @include tablet {
-      width: 10rem;
+     width: 21vw;
+     text-align: center;
+     margin-top: 1rem;
+     padding: 1.25rem 0 0 0 ;
+     font-size: 1rem;
     }
   }
 
