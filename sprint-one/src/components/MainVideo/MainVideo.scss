@@ -7,13 +7,26 @@
   width: 100vw;
   margin-top: 1rem;
   background-color: black;
+
+  @include tablet {
+    height: 25rem;
+  }
+
+  @include desktop {
+    height: 33.75rem;
+  }
   
   
   &__player {
     width: 100%;
+    height: 100%;
 
     @include tablet {
       width: 91%
+    }
+
+    @include desktop {
+      width: 74%;
     }
   }
 }

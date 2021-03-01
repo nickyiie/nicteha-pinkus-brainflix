@@ -10,7 +10,7 @@ function Intro(props) {
       <section className='intro'>
         <div className='intro__heading'>
           <h1 className='intro__title'>{props.videoInfo.title}</h1>
-          <h2 className='intro__author'>{props.videoInfo.channel}</h2>
+          <h2 className='intro__author'>By {props.videoInfo.channel}</h2>
           <p className='intro__date'>{cDate}</p>
           <div className='intro__counter'>
             <img className='intro__counter-image' src={Views} alt='viewership'/>

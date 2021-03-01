@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.scss'
 import data from './data/video-details.json';
 import Header from './components/Header/Header';
 import MainVideo from './components/MainVideo/MainVideo';
@@ -34,13 +35,17 @@ class App extends Component {
           
   render() {
   return (
-    <div className="App">
+    <div className="app">
      <Header/>
      <MainVideo videos={this.state.currentVideo}/>
-     <Intro videoInfo={this.state.currentVideo}/>
-     <Form/>
-     <Comments comments={this.state.currentVideo}/>
-     <Aside videos={this.state.video} clickEvent={this.eventHandler}/>
+     <div className='app__body'>
+        <div className='app__main-body'>
+          <Intro videoInfo={this.state.currentVideo}/>
+          <Form/>
+          <Comments comments={this.state.currentVideo}/>
+        </div>
+        <Aside className='app__aside' videos={this.state.video} clickEvent={this.eventHandler}/>
+    </div>
     </div>
   );
 }}

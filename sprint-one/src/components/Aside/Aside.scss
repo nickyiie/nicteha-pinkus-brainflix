@@ -15,6 +15,10 @@
     @include tablet {
       font-size: 1rem;;
     }
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
   }
   
   &__video-box {
@@ -48,6 +52,11 @@
     @include tablet {
       font-size: 1rem;
     }
+
+    @include desktop {
+      font-family: 'AvenirNext LT Pro Demi';
+      font-size: 1.5rem;
+    }
   }
 
   &__channel {
@@ -57,6 +66,11 @@
 
     @include tablet {
       font-size: .875rem;
+    }
+
+    @include desktop {
+      font-size: 1.25rem;
+      margin-top: .5rem;
     }
   }
 }
