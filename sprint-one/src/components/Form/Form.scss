@@ -2,11 +2,16 @@
 @import '../../partials/variables';
 @import '../../partials/mixins.scss';
 
-.comments {
+.form {
   display:flex;
   flex-direction: column;
   align-items: flex-start;
   margin: .5rem 1rem 0 1rem;
+
+  @include tablet {
+    width: 100%;
+    justify-content: space-around;
+  }
 
   &__counter {
     color: $color-text;
@@ -63,12 +68,16 @@
     }
   }
 
+  &__heading {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__label {
     color: $color-light-text;
     font-family: 'AvenirNext LT Pro Demi';
     font-size: .875rem;
     text-align:left;
-    
   }
 
   &__textbox {
@@ -76,9 +85,16 @@
     height: 6rem;
     border-radius: 4px;
     border: 3px solid $color-primary;
+    padding: 1em;
 
-    &:focus {
-      border: 1px solid black;
+    &::placeholder {
+      color: $color-text;
+      opacity: 1;
+    }
+
+    @include tablet {
+      height: 3rem;
+      // flex-grow: ;
     }
   }
 
@@ -86,23 +102,10 @@
     @include button;
     width: 100%;
     margin: .75rem 0 0 0;
+    text-align: center;
 
-    @include between-mobile-tablet {
-      align-self: flex-end;
-      width: 43%;
-    }
-
-    @include tablet { 
-      width: 40%;
-      margin-top: 1.5rem;
-    }
-
-    @include between-tablet-desktop {
-      width: 30%;
-    }
-
-    @include desktop {
-      width: 38%;
+    @include tablet {
+      width: 10rem;
     }
   }
 

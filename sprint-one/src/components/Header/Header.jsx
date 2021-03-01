@@ -1,7 +1,7 @@
 import Logo from '../../assets/Images/Logo/Logo-brainflix.svg';
 import Avatar from '../../assets/Images/Mohan-muruge.jpg';
 import Lens from '../../assets/Images/Icons/Icon-search.svg';
-import '../scss/Header.scss'
+import './Header.scss'
 
 function Header () {
   return (

@@ -1,0 +1,19 @@
+@import '../../partials/resets';
+@import '../../partials/variables';
+@import '../../partials/mixins.scss';
+
+.video {
+  @include flex-center;
+  width: 100vw;
+  margin-top: 1rem;
+  background-color: black;
+  
+  
+  &__player {
+    width: 100%;
+
+    @include tablet {
+      width: 91%
+    }
+  }
+}

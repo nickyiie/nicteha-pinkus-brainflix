@@ -10,14 +10,24 @@
   &__title {
     color: $color-light-text;
     font-size: .875rem;
+    margin-bottom: 2.5rem;
   }
   
   &__video-box {
     display: flex;
+    margin-bottom: 1.5rem;
+  }
+
+  &__preview {
+    width: 7.5rem;
+    height: 4.375rem;
+    object-fit: cover;
+    
   }
 
   &__blurb {
-   margin-left: 1rem;
+    width: 50%;
+    margin-left: 1rem;
   }
 
   &__header {

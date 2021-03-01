@@ -41,7 +41,7 @@
     width: 25%;
 
     &:focus {
-      border: none;
+      outline: none;
     }
 
     @include tablet {
