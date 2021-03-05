@@ -1,0 +1,76 @@
+@import '../../partials/resets';
+@import '../../partials/mixins';
+@import '../../partials/variables';
+
+.aside {
+  @include flex-column;
+  align-items:flex-start;
+  margin: 2.5rem 1rem 0 1rem;
+  
+  &__title {
+    color: $color-light-text;
+    font-size: .875rem;
+    margin-bottom: 2.5rem;
+
+    @include tablet {
+      font-size: 1rem;;
+    }
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
+  }
+  
+  &__video-box {
+    display: flex;
+    margin-bottom: 1.5rem;
+  }
+
+  &__preview {
+    width: 7.5rem;
+    height: 4.375rem;
+    object-fit: cover;
+    border-radius: 4px;
+    
+  }
+
+  &__blurb {
+    width: 50%;
+    margin-left: 1rem;
+
+    @include tablet {
+      width: 44%;
+    }
+  }
+
+  &__header {
+    font-family: 'AvenirNext LT Pro Bold';
+    text-align: left;
+    font-size: .875rem;
+    line-height: 1.375rem;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+
+    @include desktop {
+      font-family: 'AvenirNext LT Pro Demi';
+      font-size: 1.5rem;
+    }
+  }
+
+  &__channel {
+    text-align:left;
+    margin-top: 1rem;
+    font-size: .8125rem;
+
+    @include tablet {
+      font-size: .875rem;
+    }
+
+    @include desktop {
+      font-size: 1.25rem;
+      margin-top: .5rem;
+    }
+  }
+}

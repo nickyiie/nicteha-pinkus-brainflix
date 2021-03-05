@@ -1,0 +1,83 @@
+@import '../../partials/resets';
+@import '../../partials/variables';
+@import '../../partials/mixins.scss';
+
+.header {
+  &__nav {
+    @include flex-center;
+      flex-wrap: wrap;
+
+    @include tablet {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      height: 6rem;
+    }
+
+    @include desktop {
+      margin: 0 6.25rem;
+    }
+
+  }
+
+  &__logo {
+    margin: 1.5rem;
+
+    @include tablet {
+      margin: 1.5rem 10.5625rem 1.5rem 1.5rem;
+    }
+    
+    @include desktop {
+      margin: 1.5rem 31.8125rem 1.5rem 0; 
+    }
+  }  
+
+  &__search {
+    width: 90vw;
+    border: 1px solid $color-light-text;
+    border-radius: .25rem;
+    display: flex;
+    background-color: $color-light-background;
+
+    @include tablet {
+      width: 27%;
+    }
+  }
+
+  &__search-bar {
+    padding: 1rem 0;
+    border: none;
+    background-color: $color-light-background;
+    width: 25%;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include tablet {
+      width: 10rem;
+    }
+  }
+
+  &__image {
+    margin: 0 .5rem;
+  }
+
+  &__button {
+    @include button;
+
+    @include tablet {
+      padding: 1rem 2rem;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__avatar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 5rem;
+    object-fit: cover;
+    object-position: left;
+  }
+
+}
+
