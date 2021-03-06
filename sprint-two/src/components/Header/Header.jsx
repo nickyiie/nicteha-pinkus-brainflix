@@ -1,7 +1,8 @@
 import Logo from '../../assets/Images/Logo/Logo-brainflix.svg';
 import Avatar from '../../assets/Images/Mohan-muruge.jpg';
 import Lens from '../../assets/Images/Icons/Icon-search.svg';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import Plus from '../../assets/Images/Icons/Icon-upload.svg';
+import { NavLink } from 'react-router-dom';
 import './Header.scss'
 
 function Header () {
@@ -13,7 +14,12 @@ function Header () {
           <img className='header__image' src={Lens} alt='magnifying glass'/>  
           <input className='header__search-bar' type='text' name='searchBar' placeholder='Search'></input>
         </div>
-        <NavLink className='header__link' to='/upload'><p className='header__button'>+ UPLOAD</p></NavLink>
+        <NavLink className='header__link' to='/upload'>
+          <div className='header__button'>
+            <img className='header__image' src={Plus}/>
+            <p className='header__upload'>UPLOAD</p>
+          </div>
+        </NavLink>
         <img className='header__avatar' src={Avatar} alt='avatar'/> 
       </nav>
     </header>

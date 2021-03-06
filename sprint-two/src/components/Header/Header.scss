@@ -16,7 +16,10 @@
     @include desktop {
       margin: 0 6.25rem;
     }
+  }
 
+  &__link {
+    text-decoration: none;
   }
 
   &__logo {
@@ -64,6 +67,8 @@
 
   &__button {
     @include button;
+    display: flex;
+    padding: 1rem 4.25rem;
 
     @include tablet {
       padding: 1rem 2rem;
