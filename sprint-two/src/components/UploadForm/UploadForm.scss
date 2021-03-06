@@ -1,0 +1,45 @@
+@import '../../partials/resets';
+@import '../../partials/variables';
+@import '../../partials/mixins.scss';
+
+.upload-form {
+  &__label {
+    color: $color-light-text;
+    font-family: 'AvenirNext LT Pro Demi';
+    font-size: .75rem;
+    text-align:left;
+  }
+
+  &__thumbnail-poster {
+    width: 14.25rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    @include flex-column;
+    
+  }
+
+  &__titlebox {
+    background-color: $color-light-background;
+    padding: .5rem;
+    border: 1px solid $color-light-text;
+    border-radius: 4px; 
+    margin-bottom: 1.5rem;
+    width: 90vw;
+  }
+
+  &__description {
+    background-color: $color-light-background;
+    height: 8.9375rem;
+    border: 1px solid $color-light-text;
+    border-radius: 4px; 
+    margin-bottom: 1.5rem;
+  }
+
+  &__button {
+    @include button;
+    width: 90vw;
+  }
+}

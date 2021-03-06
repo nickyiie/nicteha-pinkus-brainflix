@@ -1,0 +1,25 @@
+@import '../../partials/resets';
+@import '../../partials/typography';
+@import '../../partials/variables';
+@import '../../partials/mixins.scss';
+
+.upload {
+  margin: 0 1rem 0 1rem;
+
+  &__title {
+    font-family: 'AvenirNext LT Pro Bold';
+    color: $color-text;
+    font-size: 1.5rem;
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  &__button {
+    font-size: 0.875rem;
+  color: $color-primary;
+  background-color: $color-white;
+  padding: 1rem 4.85rem;
+  border:none;
+  margin: .5rem 1rem 0 0;
+  text-align: center;
+  }
+}

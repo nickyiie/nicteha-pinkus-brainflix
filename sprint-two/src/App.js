@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import Main from './pages/Main'
-import Header from './components/Header/Header'
+import Main from './pages/Main/Main';
+import Header from './components/Header/Header';
+import Upload from './pages/Upload/Upload';
 
 
 
@@ -15,7 +16,8 @@ class App extends Component {
         <Header/>
         <Switch>
           <Route path='/' exact component={Main}/>
-          {/* <Route path='/upload' component={Upload}/> */}
+          <Route path='/upload' component={Upload}/>
+          {/* <Route path='/videos/:videoId' component={Main}/> this.match.props yada yada*/}
         </Switch>
       </BrowserRouter>
     </div>
