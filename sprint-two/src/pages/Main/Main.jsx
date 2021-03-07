@@ -8,30 +8,39 @@ import Comments from '../../components/Comments/Comments'
 import Aside from '../../components/Aside/Aside'
 import axios from 'axios';
 
-// let API_KEY = 'nicky'
-// let API_URL = 'https://project-2-api.herokuapp.com/videos?api_key='
+let API_KEY = 'nicky'
+let API_URL = 'https://project-2-api.herokuapp.com/videos'
 
 
 class Main extends Component {
-  state = { video: data,
+  state = { video: [],
             currentVideo: data[0]
             }
 
-  // getMoviesDetails = () => {
-  //   axios.get (`${API_URL}${API_KEY}`)
-  //   .then ((data) => {
-  //     console.log(data);
-  //     this.setState({
-  //       video: data,
-  //       currentVideo: data[0]
-  //     })
-  //   })
-  // }         
+  getVideos = () => {
+    axios.get (`${API_URL}?api_key=${API_KEY}`)
+    .then ((response) => {
+      console.log(response.data);
+      this.setState({
+        video: response.data,
+      })
+    })
+  }
+  
+  getVideosDetails = (movieID) => 
+    axios.get(`${API_URL}/${movieID}?api_key=${API_KEY}`)
+    .then(response => {
+      console.log(response)
+    })
 
-  // componentDidMount() {
-  //   this.getMoviesDetails();
-  //   console.log(this.state.currentVideo)
-  // }
+  componentDidMount() {
+    this.getVideos();
+    console.log(this.state.currentVideo)
+  }
+
+  componentDidUpdate() {
+    this.getVideosDetails();
+  }
 
 
   eventHandler = (videoId) => {
@@ -47,14 +56,14 @@ class Main extends Component {
     updatedVideos.unshift(clickedVideo);
 
     this.setState({
-      video: updatedVideos, currentVideo: data[videoIndex] 
+      video: updatedVideos, currentVideo: this.state[videoIndex] 
     })
   }
           
   render() {
-      // if (this.state.currentVideo === null) {
-      //     return <main>Loading recipe...</main>;
-      // }
+      if (this.state.currentVideo === null) {
+          return <main>Loading recipe...</main>;
+      }
   return (
     <div className="main">
      <MainVideo videos={this.state.currentVideo}/>

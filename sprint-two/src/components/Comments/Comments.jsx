@@ -1,7 +1,7 @@
 import './Comments.scss'
 
 function Comments (props) {
-
+console.log(props)
   
 
   return(
