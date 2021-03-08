@@ -14,7 +14,7 @@ let API_URL = 'https://project-2-api.herokuapp.com/videos/'
 
 class Main extends Component {
   state = { video: [],
-            currentVideo: data[0]
+            mainVideo: null,
             }
 
   getVideos = () => {
@@ -23,32 +23,43 @@ class Main extends Component {
       this.setState({
         video: response.data,
       })
+      console.log(response)
     })
   }
   
+  getMainVideo = () => {
+    axios.get(`${API_URL}1af0jruup5gu/?api_key=${API_KEY}`)
+    .then(response => {
+      console.log(response)
+      this.setState({
+        mainVideo: response.data
+      })
+    })
+  }
+
   getCurrentVideo = (videoId) => 
     axios.get(`${API_URL}${videoId}/?api_key=${API_KEY}`)
     .then(response => {
       console.log(response)
       this.setState({
-        currentVideo: response.data
+        mainVideo: response.data
       })
     })
 
   componentDidMount() {
     this.getVideos();
-    this.getCurrentVideo('1aivjruutn6a');
+    this.getMainVideo();
     }
     
-    // console.log(this.props.match.params)
-    // console.log(this.state.currentVideo)
-
+    
   // componentDidUpdate() {
     
   // }
 
 
   handleClick = (videoId) => {
+    console.log(videoId)
+    this.getCurrentVideo(videoId);
     let copyData= [...this.state.video]
     let videoIndex= copyData.findIndex(videos => {
      return videos.id === videoId 
@@ -61,21 +72,24 @@ class Main extends Component {
     updatedVideos.unshift(clickedVideo);
 
     this.setState({
-      video: updatedVideos, currentVideo: this.state[videoIndex] 
+      video: updatedVideos 
     })
   }
       
 
 
   render() {
+    if (this.state.mainVideo === null) {
+      return <div> Loading...</div>
+    }
   return (
     <div className="main">
-     <MainVideo videos={this.state.currentVideo}/>
+     <MainVideo videos={this.state.mainVideo}/>
      <div className='main__body'>
         <div className='main__main-body'>
-          <Intro videoInfo={this.state.currentVideo}/>
+          <Intro videoInfo={this.state.mainVideo}/>
           <Form/>
-          <Comments comments={this.state.currentVideo}/>
+          <Comments comments={this.state.mainVideo}/>
         </div>
         <Aside className='main__aside' videos={this.state.video} clickEvent={this.handleClick}/>
     </div>
