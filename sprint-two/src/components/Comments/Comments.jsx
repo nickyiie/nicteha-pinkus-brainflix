@@ -1,13 +1,9 @@
 import './Comments.scss'
 
 function Comments (props) {
-console.log(props)
-  
-
   return(
     props.comments.comments.map(comment => {
       let time = new Date (props.comments.timestamp)
-      console.log(time)
       let cDate = time.getMonth() + "/" + time.getDate() + "/" + time.getFullYear();
       return (
         <div className='comments__display' key={comment.id}>

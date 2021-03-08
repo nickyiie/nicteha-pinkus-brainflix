@@ -6,7 +6,7 @@
   &__display {
     display: flex;
     padding: 1.5rem 0;
-    border-bottom: 1px solid $color-light-text;
+    border-bottom: 1px solid $color-divider;
     margin: 1rem; 
 
     @include tablet {

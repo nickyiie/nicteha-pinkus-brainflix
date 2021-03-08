@@ -17,7 +17,7 @@ class App extends Component {
         <Switch>
           <Route path='/' exact component={Main}/>
           <Route path='/upload' component={Upload}/>
-          {/* <Route path='/videos/:videoId' component={Main}/> this.match.props yada yada*/}
+          <Route path='/videos/:videoId' exact component={Main}/> 
         </Switch>
       </BrowserRouter>
     </div>

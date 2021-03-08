@@ -4,7 +4,6 @@ import './Intro.scss'
 
 function Intro(props) {
   let time = new Date (props.videoInfo.timestamp)
-  console.log(time)
   let cDate = time.getMonth() + "/" + time.getDate() + "/" + time.getFullYear();
     return (
       <section className='intro'>
