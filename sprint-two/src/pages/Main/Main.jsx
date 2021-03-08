@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Main.scss'
-import data from '../../data/video-details.json';
 import MainVideo from '../../components/MainVideo/MainVideo';
 import Intro from '../../components/Intro/Intro';
 import Form from '../../components/Form/Form';
@@ -12,7 +11,7 @@ let API_KEY = 'nicky'
 let API_URL = 'https://project-2-api.herokuapp.com/videos/'
 
 
-class Main extends Component {
+class Main extends Component {  
   state = { video: [],
             mainVideo: null,
             }
@@ -52,14 +51,15 @@ class Main extends Component {
     }
     
     
-  // componentDidUpdate() {
-    
-  // }
+  componentDidUpdate(prevProps) {
+    let videoId = this.props.match.params.videoId;
+    if (prevProps.match.params.videoId != videoId) {
+      this.getCurrentVideo(videoId);
+    }
+  }
 
 
   handleClick = (videoId) => {
-    console.log(videoId)
-    this.getCurrentVideo(videoId);
     let copyData= [...this.state.video]
     let videoIndex= copyData.findIndex(videos => {
      return videos.id === videoId 
@@ -79,7 +79,7 @@ class Main extends Component {
 
 
   render() {
-    if (this.state.mainVideo === null) {
+  if (this.state.mainVideo === null) {
       return <div> Loading...</div>
     }
   return (
