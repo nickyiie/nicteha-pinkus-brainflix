@@ -18,6 +18,7 @@ router.get("/", (req, res) => {
 });
 
 router.get('/:videoId', (req, res) => {
+  console.log(req.params.videoId)
   let videos = readVideos();
   let currentVideo = videos.find((video) => video.id === req.params.videoId);
 
@@ -36,6 +37,12 @@ router.post('/', (req,res) => {
     duration: "long",
     video: "https://project-2-api.herokuapp.com/stream",
     timestamp: Date.now(),
+    comments: [{
+      name: "Lucy",
+      comment: "howdy",
+      id: uuidv4(),
+      timestamp: Date.now()
+    }]
   };
   let videos = readVideos();
   videos.push(newVideo);

@@ -30,39 +30,21 @@ class Main extends Component {
     })
   }
 
-  // getVideos = () => {
-  //   axios.get (`${API_URL}?api_key=${API_KEY}`)
-  //   .then ((response) => {
-  //     console.log(response.data)
-
-  //     this.setState({
-  //       video: response.data,
-  //     })
-  //   })
-  // }
-  
-
-  // getCurrentVideo = (videoId) => 
-  //   axios.get(`${API_URL}videos`)
-  //   .then(response => {
-  //     console.log(response)
-  //     this.setState({
-  //       mainVideo: response.data
-  //     })
-  //   })
-
-  // componentDidMount() {
-  //   this.getVideos();
-  //   this.getCurrentVideo("1af0jruup5gu");
-  //   }
+  getCurrentVideo = (videoId) => 
+    axios.get(`${API_URL}videos/${videoId}`)
+    .then(response => {
+      console.log(response)
+      this.setState({
+        mainVideo: response.data
+      })
+    })
     
-    
-  // componentDidUpdate(prevProps) {
-  //   let videoId = this.props.match.params.videoId;
-  //   if (prevProps.match.params.videoId !== videoId) {
-  //    return this.getCurrentVideo(videoId);
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    let videoId = this.props.match.params.videoId;
+    if (prevProps.match.params.videoId !== videoId) {
+     return this.getCurrentVideo(videoId);
+    }
+  }
 
 
   handleClick = (videoId) => {

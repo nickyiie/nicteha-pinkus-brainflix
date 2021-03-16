@@ -4,7 +4,7 @@ import './Form.scss'
 function Form ({commentCount}) {
   return (
     <div className='form'>
-      <p className='form__counter'>{`${commentCount.length} Comments`}</p>
+      <p className='form__counter'>{`${commentCount.comments.length} Comments`}</p>
       <div className='form__interactive'>
         <img className='form__image' src={Avatar} alt='user avatar'/>
         <form className='form__form'>
