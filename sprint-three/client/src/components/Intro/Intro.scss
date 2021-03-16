@@ -1,0 +1,110 @@
+@import '../../partials/resets';
+@import '../../partials/mixins';
+@import '../../partials/variables';
+
+.intro {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 2rem 1rem;
+
+  @include tablet {
+    margin: 3rem 1.5rem 4rem 1.5rem;
+  }
+
+  @include desktop {
+    margin: 2.5rem 6.25rem 4rem 6.25rem;
+  }
+
+  &__heading {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablet {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $color-divider;
+    }
+
+    @include desktop {
+      padding-bottom: .5rem;
+    }
+  }
+
+  &__title {
+    font-family: 'AvenirNext LT Pro Bold';
+    margin-bottom:1rem;
+    text-align:left;
+
+    @include tablet {
+      margin-right: 5rem;
+      font-size: 2.25rem;
+    }
+  }
+
+  &__author {
+    font-family: 'AvenirNext LT Pro Demi';
+    font-size: 0.875rem;
+    margin-right: .5rem;
+
+    @include tablet {
+      width: 6rem;
+      height: 1rem;
+    }
+
+    @include desktop {
+      width: 12rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__date {
+    color: $color-light-text;
+
+    @include tablet {
+      width: 3rem;
+      height: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__counter {
+    display: flex;
+    margin: 2rem 1rem 1.5rem 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $color-divider;
+    
+    @include tablet {
+      margin: 0 0 0 70%;
+      border-bottom: none;
+    }
+
+    &-image {
+      margin-right:.5rem;
+    }
+  
+    &-count {
+      margin-right: 1rem;
+
+      @include desktop {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__blurb {
+    text-align: left;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+
+    @include tablet {
+      margin: 2.5rem 8rem 0 0;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    @include desktop {
+      margin-right: 5rem;
+      line-height: 1rem;
+    }
+  }
+}

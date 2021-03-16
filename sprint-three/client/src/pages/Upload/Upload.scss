@@ -1,0 +1,56 @@
+@import '../../partials/resets';
+@import '../../partials/typography';
+@import '../../partials/variables';
+@import '../../partials/mixins.scss';
+
+.upload {
+  margin: 0 1rem 0 1rem;
+  @include flex-column;
+  position: relative;
+  border-top: 1px solid $color-divider;
+
+  @include desktop {
+    padding: 0 6.25rem;
+  }
+
+  &__title {
+    font-family: 'AvenirNext LT Pro Bold';
+    color: $color-text;
+    font-size: 1.5rem;
+    margin: 1.5rem 0 2rem 0;
+
+    @include tablet {
+      font-size: 2.25rem;
+      margin: 3rem 0 2.5rem 0;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid $color-divider;
+    }
+  }
+
+  &__button {
+    font-size: 0.875rem;
+  color: $color-primary;
+  background-color: $color-white;
+  padding: 1rem 4.85rem;
+  border:none;
+  margin: .5rem 1rem 0 0;
+  text-align: center;
+
+  @include tablet {
+    position: absolute; 
+    top: 20.48rem;
+    left: 14rem;
+    padding: 1rem 0;
+    margin-right: .5rem;
+  } 
+
+  @include desktop {
+    top: 12.15rem;
+    left: 25rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+  }
+}

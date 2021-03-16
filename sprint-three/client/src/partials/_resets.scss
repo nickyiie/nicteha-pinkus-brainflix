@@ -1,0 +1,19 @@
+@import './typography';
+@import './variables';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+* ::before,
+* ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'AvenirNext LT Pro', sans-serif;
+  color: $color-text;
+  margin: 0;
+}

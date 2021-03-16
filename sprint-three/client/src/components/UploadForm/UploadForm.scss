@@ -1,0 +1,122 @@
+@import '../../partials/resets';
+@import '../../partials/variables';
+@import '../../partials/mixins';
+
+.upload-form {
+  @include flex-column;
+
+  &__manifest {
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__preview {
+    @include flex-column;
+
+    @include desktop {
+      margin-right:1.5rem;
+    }
+  }
+
+
+
+  &__label {
+    color: $color-light-text;
+    font-family: 'AvenirNext LT Pro Demi';
+    font-size: .75rem;
+    text-align:left;
+  }
+
+  &__thumbnail-poster {
+    width: 18rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      width: 21.5rem;
+    }
+  }
+
+  &__interactive {
+    @include flex-column;
+    
+    @include desktop {
+      width: 40vw;
+    }
+  }
+
+  &__input {
+    background-color: $color-light-background;
+    padding: .5rem;
+    border: 1px solid $color-light-text;
+    border-radius: 4px; 
+    margin-bottom: 1.5rem;
+    width: 90vw;
+
+    @include tablet {
+      width: 94vw
+    }
+
+    @include desktop {
+      width: 55.5vw;
+    }
+
+    &::placeholder {
+      font-size: .875rem;
+      color: $color-text;
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__titlebox {
+    height: 2.5rem;
+  }
+
+  &__description {
+    height: 8.9375rem;
+
+    @include tablet {
+      margin-bottom: 2.5rem;
+    }
+
+    @include desktop {
+      height: 6.65rem;
+    }
+  }
+
+  &__divider {
+    visibility: hidden;
+
+    @include tablet {
+      visibility: visible;
+      color: $color-divider;
+      width: 94vw;
+    }
+
+    @include desktop {
+      width: 84vw;
+    }
+  }
+
+  &__button {
+    @include button;
+    width: 90vw;
+
+    @include tablet {
+      width: 21.5vw;
+      align-self: flex-end;
+      margin-top: 2.5rem;
+      padding: 1rem 1rem;
+      margin-left: 2.5rem;
+    }
+
+    @include desktop {
+      width: 12.75vw;
+    }
+  }
+}

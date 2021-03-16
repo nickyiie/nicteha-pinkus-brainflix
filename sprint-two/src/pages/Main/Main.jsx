@@ -22,14 +22,12 @@ class Main extends Component {
       this.setState({
         video: response.data,
       })
-      console.log(response)
     })
   }
   
   getMainVideo = () => {
     axios.get(`${API_URL}1af0jruup5gu/?api_key=${API_KEY}`)
     .then(response => {
-      console.log(response)
       this.setState({
         mainVideo: response.data
       })
@@ -53,8 +51,8 @@ class Main extends Component {
     
   componentDidUpdate(prevProps) {
     let videoId = this.props.match.params.videoId;
-    if (prevProps.match.params.videoId != videoId) {
-      this.getCurrentVideo(videoId);
+    if (prevProps.match.params.videoId !== videoId) {
+     return this.getCurrentVideo(videoId);
     }
   }
 
@@ -76,8 +74,6 @@ class Main extends Component {
     })
   }
       
-
-
   render() {
   if (this.state.mainVideo === null) {
       return <div> Loading...</div>
@@ -88,7 +84,7 @@ class Main extends Component {
      <div className='main__body'>
         <div className='main__main-body'>
           <Intro videoInfo={this.state.mainVideo}/>
-          <Form/>
+          <Form commentCount={this.state.mainVideo}/>
           <Comments comments={this.state.mainVideo}/>
         </div>
         <Aside className='main__aside' videos={this.state.video} clickEvent={this.handleClick}/>
