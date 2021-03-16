@@ -7,8 +7,7 @@ import Comments from '../../components/Comments/Comments'
 import Aside from '../../components/Aside/Aside'
 import axios from 'axios';
 
-let API_KEY = 'nicky'
-let API_URL = 'https://project-2-api.herokuapp.com/videos/'
+let API_URL = 'http://localhost:8080/'
 
 
 class Main extends Component {  
@@ -17,11 +16,13 @@ class Main extends Component {
             }
 
   componentDidMount() {
-    axios.get('http:localhost:8080/videos')
+    axios.get(`${API_URL}videos`)
     .then ((res) => {
-      console.log(res)
+      console.log(res.data)
       this.setState({
-        video: res.data
+        video: res.data,
+        mainVideo: res.data[0]
+
       })
     })
     .catch ((err) => {
@@ -41,14 +42,14 @@ class Main extends Component {
   // }
   
 
-  // getCurrentVideo = (videoId) => 
-  //   axios.get(`${API_URL}${videoId}/?api_key=${API_KEY}`)
-  //   .then(response => {
-  //     console.log(response)
-  //     this.setState({
-  //       mainVideo: response.data
-  //     })
-  //   })
+  getCurrentVideo = (videoId) => 
+    axios.get(`${API_URL}${videoId}`)
+    .then(response => {
+      console.log(response)
+      this.setState({
+        mainVideo: response.data[0]
+      })
+    })
 
   // componentDidMount() {
   //   this.getVideos();
@@ -56,12 +57,12 @@ class Main extends Component {
   //   }
     
     
-  // componentDidUpdate(prevProps) {
-  //   let videoId = this.props.match.params.videoId;
-  //   if (prevProps.match.params.videoId !== videoId) {
-  //    return this.getCurrentVideo(videoId);
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    let videoId = this.props.match.params.videoId;
+    if (prevProps.match.params.videoId !== videoId) {
+     return this.getCurrentVideo(videoId);
+    }
+  }
 
 
   handleClick = (videoId) => {
@@ -77,7 +78,8 @@ class Main extends Component {
     updatedVideos.unshift(clickedVideo);
 
     this.setState({
-      video: updatedVideos 
+      video: updatedVideos ,
+      // mainVideo: this.state.mainVideo[videoIndex]
     })
   }
       
@@ -91,7 +93,7 @@ class Main extends Component {
      <div className='main__body'>
         <div className='main__main-body'>
           <Intro videoInfo={this.state.mainVideo}/>
-          <Form commentCount={this.state.mainVideo}/>
+          <Form commentCount={this.state.mainVideo.comments}/>
           <Comments comments={this.state.mainVideo}/>
         </div>
         <Aside className='main__aside' videos={this.state.video} clickEvent={this.handleClick}/>
