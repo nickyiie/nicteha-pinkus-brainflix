@@ -35,8 +35,7 @@ router.post('/', (req,res) => {
     likes: 0,
     duration: "long",
     video: "https://project-2-api.herokuapp.com/stream",
-    timestamp: getTime(),
-    comments: []
+    timestamp: Date.now(),
   };
   let videos = readVideos();
   videos.push(newVideo);
