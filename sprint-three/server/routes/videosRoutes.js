@@ -9,10 +9,6 @@ function readVideos() {
   return parsedData;
 };
 
-router.use((_req, _res, next) => {
-  next();
-});
-
 router.get("/", (req, res) => {
   res.json(readVideos());
 });
