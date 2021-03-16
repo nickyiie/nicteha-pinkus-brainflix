@@ -16,49 +16,52 @@ class Main extends Component {
             mainVideo: null,
             }
 
-  // componentDidMount() {
-  //   axios.get('http:localhost:8080/videos')
-  //   .then ((res) => {
-  //     console.log(res)
+  componentDidMount() {
+    axios.get('http:localhost:8080/videos')
+    .then ((res) => {
+      console.log(res)
+      this.setState({
+        video: res.data
+      })
+    })
+    .catch ((err) => {
+      console.log(err)
+    })
+  }
+
+  // getVideos = () => {
+  //   axios.get (`${API_URL}?api_key=${API_KEY}`)
+  //   .then ((response) => {
+  //     console.log(response.data)
+
   //     this.setState({
-  //       video: res.data
+  //       video: response.data,
   //     })
   //   })
   // }
-
-  getVideos = () => {
-    axios.get (`${API_URL}?api_key=${API_KEY}`)
-    .then ((response) => {
-      console.log(response.data)
-
-      this.setState({
-        video: response.data,
-      })
-    })
-  }
   
 
-  getCurrentVideo = (videoId) => 
-    axios.get(`${API_URL}${videoId}/?api_key=${API_KEY}`)
-    .then(response => {
-      console.log(response)
-      this.setState({
-        mainVideo: response.data
-      })
-    })
+  // getCurrentVideo = (videoId) => 
+  //   axios.get(`${API_URL}${videoId}/?api_key=${API_KEY}`)
+  //   .then(response => {
+  //     console.log(response)
+  //     this.setState({
+  //       mainVideo: response.data
+  //     })
+  //   })
 
-  componentDidMount() {
-    this.getVideos();
-    this.getCurrentVideo("1af0jruup5gu");
-    }
+  // componentDidMount() {
+  //   this.getVideos();
+  //   this.getCurrentVideo("1af0jruup5gu");
+  //   }
     
     
-  componentDidUpdate(prevProps) {
-    let videoId = this.props.match.params.videoId;
-    if (prevProps.match.params.videoId !== videoId) {
-     return this.getCurrentVideo(videoId);
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   let videoId = this.props.match.params.videoId;
+  //   if (prevProps.match.params.videoId !== videoId) {
+  //    return this.getCurrentVideo(videoId);
+  //   }
+  // }
 
 
   handleClick = (videoId) => {
