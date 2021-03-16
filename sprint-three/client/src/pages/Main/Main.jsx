@@ -29,20 +29,14 @@ class Main extends Component {
   getVideos = () => {
     axios.get (`${API_URL}?api_key=${API_KEY}`)
     .then ((response) => {
+      console.log(response.data)
+
       this.setState({
         video: response.data,
       })
     })
   }
   
-  getMainVideo = () => {
-    axios.get(`${API_URL}1af0jruup5gu/?api_key=${API_KEY}`)
-    .then(response => {
-      this.setState({
-        mainVideo: response.data
-      })
-    })
-  }
 
   getCurrentVideo = (videoId) => 
     axios.get(`${API_URL}${videoId}/?api_key=${API_KEY}`)
@@ -55,7 +49,7 @@ class Main extends Component {
 
   componentDidMount() {
     this.getVideos();
-    this.getMainVideo();
+    this.getCurrentVideo("1af0jruup5gu");
     }
     
     
