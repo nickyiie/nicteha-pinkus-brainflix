@@ -24,6 +24,27 @@ router.get('/:videoId', (req, res) => {
   res.json(currentVideo);
 });
 
+router.post('/', (req,res) => {
+  let newVideo = {
+    id: uuidv4(),
+    title: req.body.title,
+    channel: "Nicky",
+    image: "https://i.imgur.com/l2Xfgpl.jpg",
+    description: req.body.description,
+    views: 0,
+    likes: 0,
+    duration: "long",
+    video: "https://project-2-api.herokuapp.com/stream",
+    timestamp: getTime(),
+    comments: []
+  };
+  let videos = readVideos();
+  videos.push(newVideo);
+  fs.writeFileSync("./data/video-details.json", JSON.stringify(videos));
+
+  res.json(newVideo);
+});
+
 module.exports = router;
 
 

@@ -2,6 +2,7 @@ import Preview from '../../assets/Images/Upload-video-preview.jpg';
 import React, { Component } from 'react';
 import './UploadForm.scss';
 import { withRouter} from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -10,6 +11,10 @@ class UploadForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     alert('Your video has been uploaded!');
+    axios.post('http://localhost:8080/videos', {
+      title: event.target.titlebox.value,
+      description: event.target.description.value
+      })
     this.props.history.push('/');
   }
 

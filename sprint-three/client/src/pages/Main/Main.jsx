@@ -42,14 +42,14 @@ class Main extends Component {
   // }
   
 
-  getCurrentVideo = (videoId) => 
-    axios.get(`${API_URL}${videoId}`)
-    .then(response => {
-      console.log(response)
-      this.setState({
-        mainVideo: response.data[0]
-      })
-    })
+  // getCurrentVideo = (videoId) => 
+  //   axios.get(`${API_URL}videos`)
+  //   .then(response => {
+  //     console.log(response)
+  //     this.setState({
+  //       mainVideo: response.data
+  //     })
+  //   })
 
   // componentDidMount() {
   //   this.getVideos();
@@ -57,12 +57,12 @@ class Main extends Component {
   //   }
     
     
-  componentDidUpdate(prevProps) {
-    let videoId = this.props.match.params.videoId;
-    if (prevProps.match.params.videoId !== videoId) {
-     return this.getCurrentVideo(videoId);
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   let videoId = this.props.match.params.videoId;
+  //   if (prevProps.match.params.videoId !== videoId) {
+  //    return this.getCurrentVideo(videoId);
+  //   }
+  // }
 
 
   handleClick = (videoId) => {
@@ -79,7 +79,7 @@ class Main extends Component {
 
     this.setState({
       video: updatedVideos ,
-      // mainVideo: this.state.mainVideo[videoIndex]
+      mainVideo: this.state.video[videoIndex]
     })
   }
       
@@ -93,7 +93,7 @@ class Main extends Component {
      <div className='main__body'>
         <div className='main__main-body'>
           <Intro videoInfo={this.state.mainVideo}/>
-          <Form commentCount={this.state.mainVideo.comments}/>
+          <Form commentCount={this.state.mainVideo}/>
           <Comments comments={this.state.mainVideo}/>
         </div>
         <Aside className='main__aside' videos={this.state.video} clickEvent={this.handleClick}/>

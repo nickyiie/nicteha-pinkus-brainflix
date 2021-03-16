@@ -10,20 +10,6 @@ app.use(cors());
 
 app.use('static-files', express.static('files'));
 
-// app.use ((_req, _res, next) => {
-//   next();
-// });
-
-// app.use((_req, _res, next) => {
-//   next();
-// });
-
-// app.get('/videos', (req, res) => {
-//   res.json(videos);
-// //   res.json(readVideos());
-// //   res.json(JSON.parse(videos))
-// });
-
 app.use('/videos', videosRoutes);
 
 app.listen(PORT, () => {
